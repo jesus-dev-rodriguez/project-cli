@@ -70,6 +70,17 @@ El workflow utiliza un runner hospedado por GitHub (`ubuntu-latest`) y configura
 Go 1.27.1 automáticamente. GitHub CLI (`gh`) ya está disponible en la imagen
 del runner, y el workflow requiere el permiso `contents: write`.
 
+También puedes ejecutar el workflow manualmente sobre un tag existente, sin
+crear una nueva versión:
+
+```bash
+gh workflow run release.yml -f release_tag=v1.0.0
+gh run watch
+```
+
+El tag indicado debe existir en GitHub. Esta opción recompila el binario y
+actualiza el asset del release con `--clobber`.
+
 ### Autocompletado
 
 #### Bash
