@@ -66,9 +66,9 @@ git tag v0.1.0
 git push origin v0.1.0
 ```
 
-El workflow utiliza un runner persistente de GitHub Actions con las etiquetas
-`self-hosted`, `linux` y `x64`. Ese runner debe tener Go 1.27.1 y GitHub CLI
-(`gh`) instalados, y debe conceder al workflow el permiso `contents: write`.
+El workflow utiliza un runner hospedado por GitHub (`ubuntu-latest`) y configura
+Go 1.27.1 automáticamente. GitHub CLI (`gh`) ya está disponible en la imagen
+del runner, y el workflow requiere el permiso `contents: write`.
 
 ### Autocompletado
 
